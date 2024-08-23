@@ -5,25 +5,27 @@ public class Main {
     public static void main(String[] args) {
         
         Scanner scanner = new Scanner(System.in);
+        Print print = new Print();
 
         double quantity1, quantity2, quantity3;
         double value1, value2, value3;
         double subTotal1, subTotal2, subTotal3;
         double total;
 
-        System.out.print("\nDigite quantidade 1: ");
+        
+        print.quest("quantidade", 1);
         quantity1 = scanner.nextDouble();
-        System.out.print("\nDigite valor 1: ");
+        print.quest("valor", 1);
         value1 = scanner.nextDouble();
 
-        System.out.print("\nDigite quantidade 2: ");
+        print.quest("quantidade", 2);
         quantity2 = scanner.nextDouble();
-        System.out.print("\nDigite valor 2: ");
+        print.quest("valor", 2);
         value2 = scanner.nextDouble();
 
-        System.out.print("\nDigite quantidade 3: ");
+        print.quest("quantidade", 3);
         quantity3 = scanner.nextDouble();
-        System.out.print("\nDigite valor 3: ");
+        print.quest("valor", 3);
         value3 = scanner.nextDouble();
 
         subTotal1 = quantity1 * value1;
@@ -40,4 +42,11 @@ public class Main {
         
     }    
 
+}
+
+class Print {
+    void quest(String type, int num){
+        String mensage = String.format("\nDigite %s %d: ", type, num);
+        System.out.print(mensage);
+    }   
 }
